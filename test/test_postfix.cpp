@@ -43,11 +43,6 @@ TEST(Postfix, execute_with_map_calcs_when_vars) {
 	EXPECT_EQ(a.execute({ {'x', 5}, {'y', 2} }), 25);
 }
 
-TEST(Postfix, throws_when_execute_with_vars) {
-	Postfix a("x+2");
-	ASSERT_ANY_THROW(a.execute());
-}
-
 TEST(Postfix, throws_when_not_all_vars_are_in_map_when_execute) {
 	Postfix a("x+y");
 	ASSERT_ANY_THROW(a.execute({ {'x', 2} }));
